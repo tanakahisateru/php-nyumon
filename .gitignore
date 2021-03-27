@@ -1,0 +1,8 @@
+/vendor
+.phpunit.result.cache
+
+/.env.local
+/.env.*.local
+
+/var/**/*
+!/var/.gitignore
