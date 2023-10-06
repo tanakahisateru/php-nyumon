@@ -9,7 +9,7 @@ use Twig\Loader\FilesystemLoader;
 
 class TwigViewTest extends TestCase
 {
-    private TwigView $view;
+    private ?TwigView $view;
 
     protected function setUp(): void
     {
@@ -20,6 +20,11 @@ class TwigViewTest extends TestCase
         $responseFactory = new ResponseFactory();
 
         $this->view = new TwigView($twig, $responseFactory);
+    }
+
+    protected function tearDown(): void
+    {
+        $this->view = null;
     }
 
     public function testRender()

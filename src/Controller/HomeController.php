@@ -7,12 +7,9 @@ use Twig\Environment as Twig;
 
 class HomeController
 {
-    private Twig $twig;
-
-    public function __construct(Twig $twig)
-    {
-        $this->twig = $twig;
-    }
+    public function __construct(
+        private readonly Twig $twig,
+    ){}
 
     public function index(Response $response): Response
     {

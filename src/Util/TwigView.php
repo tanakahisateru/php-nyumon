@@ -7,15 +7,10 @@ use Twig\Environment as Twig;
 
 class TwigView
 {
-    private Twig $twig;
-
-    private ResponseFactoryInterface $responseFactory;
-
-    public function __construct(Twig $twig, ResponseFactoryInterface $responseFactory)
-    {
-        $this->twig = $twig;
-        $this->responseFactory = $responseFactory;
-    }
+    public function __construct(
+        private readonly Twig $twig,
+        private readonly ResponseFactoryInterface $responseFactory,
+    ){}
 
     public function render(string $page, array $context = []): string
     {
